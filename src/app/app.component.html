@@ -1,0 +1,14 @@
+<main class="d-flex flex-column" style="height: 100%; min-height: 100%;">
+  <app-nav-bar></app-nav-bar>
+  <div class="d-flex flex-column justify-content-between align-items-center" style="height: 100%;">
+    <div class="container-fluid p-2">
+      <router-outlet />
+    </div>
+    <app-footer></app-footer>
+  </div>
+  @if(isCartVisible()){
+    <app-cart></app-cart>
+  }
+</main>
+
+

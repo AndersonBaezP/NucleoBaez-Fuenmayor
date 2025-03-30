@@ -1,0 +1,133 @@
+/* 🎨 Estilos Globales */
+body {
+    background: url('https://source.unsplash.com/1920x1080/?education,learning') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* 📌 Breadcrumb */
+.breadcrumb {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.breadcrumb a {
+    color: #f8f9fa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #ffcc00;
+}
+
+/* 📌 Contenedor Principal */
+.container-fluid {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 90%;
+    backdrop-filter: blur(10px);
+}
+
+/* 📌 Título del Curso */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* 📌 Imagen del Curso */
+.img-fluid {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* 📌 Sección de Información */
+.col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 📌 Precio y Descripción */
+h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* 📌 Botones */
+.btn {
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ffcc00, #ff8800);
+    border: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #ff8800, #ffcc00);
+    transform: scale(1.05);
+}
+
+/* 📌 Sección "Sobre Nosotros" */
+.about {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 60px 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* 📌 Botón de "Más Información" */
+.btn-outline-light {
+    border: 2px solid #ffcc00;
+    color: #ffcc00;
+}
+
+.btn-outline-light:hover {
+    background: #ffcc00;
+    color: #000;
+}
+
+/* 📌 Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 50px;
+    text-align: center;
+}

@@ -1,0 +1,49 @@
+<form 
+    [formGroup]="form" 
+    class="d-flex text-center mx-auto align-items-stretch flex-column gap-3" 
+    style="width: 40%;"
+    (ngSubmit)="id != 0 ? updateCourse() : addCourse()"
+    >
+    <div>
+        <label for="title" class="form-label">Nombre del Curso</label>
+        <input id="title" formControlName="title" class="form-control">
+    </div>
+    <div>
+        <label for="description" class="form-label">Descripción</label>
+        <textarea id="description" formControlName="description" class="form-control" rows="3"></textarea>
+    </div>    
+    <div>
+        <label for="price" class="form-label">Precio</label>
+        <input type="number" id="price" formControlName="price" class="form-control">
+    </div>  
+    <div>
+        <label for="videoUrl" class="form-label">URL del Video</label>
+        <input type="url" id="videoUrl" formControlName="videoUrl" class="form-control">
+    </div>
+    <div>
+        <label for="image" class="form-label">Imagen</label>
+        <input type="url" id="image" formControlName="image" class="form-control">
+    </div>  
+    <div>
+        <label for="profesor" class="form-label">Profesor</label>
+        <input id="profesor" formControlName="professor" class="form-control">
+    </div>  
+    <button type="submit" class="btn btn-success">
+        @if(id != 0){
+            Actualizar
+        } @else {
+            Agregar
+        }
+    </button>    
+</form>
+<section class="about text-center">
+    <div class="container">
+        <h2>Sobre Nosotros</h2>
+        <p>EduTech Academy es una plataforma educativa innovadora con la misión de capacitar a profesionales en tecnología y negocios.</p>
+        <a routerLink="/about" class="btn btn-outline-light">Más Información</a>
+
+<footer class="footer text-center">
+    <p>&copy; 2025 EduTech Academy | Todos los derechos reservados</p>
+</footer>
+</div>
+

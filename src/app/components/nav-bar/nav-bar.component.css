@@ -1,0 +1,76 @@
+
+/* Fondo de la barra de navegación */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Logo de la tienda */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #007bff !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: #0056b3 !important;
+}
+
+/* Links del menú */
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333 !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #007bff !important;
+}
+
+/* Íconos del carrito y usuario */
+.hstack a {
+    color: #333;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.hstack a:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Imagen de usuario */
+.hstack img {
+    border: 2px solid #007bff;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.hstack img:hover {
+    border-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Botón hamburguesa en móvil */
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Ajuste en pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .hstack {
+        justify-content: center;
+    }
+}

@@ -2,38 +2,28 @@
     <h1>Cursos</h1>
     <button type="button" class="btn btn-primary mb-3" routerLink="/courses-form/0">Agregar Curso</button>
     <div class="d-flex justify-content-center align-content-center flex-wrap gap-5">
-        @for(courses of courses ; track $index){
-            <div class="card" style="width: 18rem;" (click)="goToCourse(courses.id)">
-                <img 
-                    [src]="courses.image" 
-                    class="card-img-top p-3"
-                    style="height: 200px; width: fit-content; max-width: 100%; margin-inline: auto;" 
-                    [alt]="courses.title">
-                <div class="card-body">
-                    <h5 class="card-title">{{courses.title}}</h5>
-                    <h6 class="card-subtitle mb-2">$ {{courses.price.toFixed(2)}}</h6>
-                    <a (click)="addToCart($event, courses)" class="btn btn-primary">Añadir al carrito</a>
-                    @if(role == "admin"){
-                        <a [routerLink]="['/course-form', courses.id]" class="btn btn-success">Actualizar</a>
-                        <a (click)="deleteCourse($event, courses.id)" class="btn btn-danger">Eliminar</a>
-                    }
+        <div class="card" *ngFor="let course of courses; trackBy: trackByCourseId" 
+             style="width: 18rem;" (click)="goToCourse(course.id)">
+            <img 
+                [src]="course.image" 
+                class="card-img-top p-3"
+                style="height: 200px; width: fit-content; max-width: 100%; margin-inline: auto;" 
+                [alt]="course.title">
+            <div class="card-body">
+                <h5 class="card-title">ID: {{ course.id }}</h5>
+                <h5 class="card-title">Título: {{ course.title }}</h5>
+                <p class="card-text">Descripción: {{ course.description }}</p>
+                <h6 class="card-subtitle mb-2">Precio: ${{ course.price.toFixed(2) }}</h6>
+                <p class="card-text">Profesor: {{ course.professor }}</p>
+                <p class="card-text">
+                    <a [href]="course.videoUrl" target="_blank">Ver Video</a>
+                </p>
+                <a (click)="addToCart($event, course)" class="btn btn-primary">Añadir al carrito</a>
+                <div *ngIf="role === 'admin'">
+                    <a [routerLink]="['/course-form', course.id]" class="btn btn-success">Actualizar</a>
+                    <a (click)="deleteCourse($event, course.id)" class="btn btn-danger">Eliminar</a>
                 </div>
             </div>
-        }
+        </div>
     </div>
-    
-<section class="about text-center">
-    <div class="container">
-        <h2>Sobre Nosotros</h2>
-        <p>EduTech Academy es una plataforma educativa innovadora con la misión de capacitar a profesionales en tecnología y negocios.</p>
-        <a routerLink="/about" class="btn btn-outline-light">Más Información</a>
-    </div>
-</section>
-
-<footer class="footer text-center">
-    <p>&copy; 2025 EduTech Academy | Todos los derechos reservados</p>
-</footer>
 </div>
-
-
-

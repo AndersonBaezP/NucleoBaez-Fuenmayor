@@ -1,76 +1,63 @@
 
-/* Fondo de la barra de navegación */
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 1rem;
 }
 
-/* Logo de la tienda */
 .navbar-brand {
+    font-size: 1.25rem;
     font-weight: bold;
-    font-size: 1.5rem;
-    color: #007bff !important;
+    color: #0056b3 !important;
     transition: color 0.3s ease-in-out;
 }
 
 .navbar-brand:hover {
-    color: #0056b3 !important;
+    color: #003d82 !important;
 }
 
-/* Links del menú */
+
 .navbar-nav .nav-link {
     font-size: 1rem;
     font-weight: 500;
     color: #333 !important;
     transition: color 0.3s ease-in-out;
+    padding: 0.5rem 1rem;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    color: #007bff !important;
+    color: #0056b3 !important;
+    border-bottom: 2px solid #0056b3;
 }
 
-/* Íconos del carrito y usuario */
-.hstack a {
-    color: #333;
-    font-size: 1.3rem;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
 
-.hstack a:hover {
-    color: #007bff;
-    transform: scale(1.1);
-}
-
-/* Imagen de usuario */
-.hstack img {
-    border: 2px solid #007bff;
-    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
-}
-
-.hstack img:hover {
-    border-color: #0056b3;
-    transform: scale(1.1);
-}
-
-/* Botón hamburguesa en móvil */
 .navbar-toggler {
     border: none;
     outline: none;
 }
 
-.navbar-toggler:focus {
-    box-shadow: none;
+.navbar-toggler-icon {
+    background-color: transparent;
 }
 
-/* Ajuste en pantallas pequeñas */
-@media (max-width: 768px) {
-    .navbar-nav {
-        text-align: center;
-    }
 
-    .hstack {
-        justify-content: center;
-    }
+.hstack a {
+    color: #333;
+    transition: color 0.3s ease-in-out;
 }
+
+.hstack a:hover {
+    color: #0056b3;
+}
+
+
+.rounded-circle {
+    border: 2px solid #0056b3;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rounded-circle:hover {
+    transform: scale(1.1);
+}
+

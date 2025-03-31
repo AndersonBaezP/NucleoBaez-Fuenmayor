@@ -8,9 +8,11 @@ import { warningsGuard } from './guards/warnings/warnings.guard';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { CourseComponent } from './pages/course/course.component';
 import { CourseFormComponent } from './pages/course-form/course-form.component';
+import { AboutComponent } from './pages/about/about.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
+    {path:'about',component:AboutComponent},
     {
         path: 'courses',
         component: CoursesComponent,

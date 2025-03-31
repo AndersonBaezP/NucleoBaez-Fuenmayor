@@ -1,0 +1,120 @@
+/* Contenedor del carrito */
+.cart-container {
+    width: 30%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(13, 9, 247, 0.5); /* Azul semi-transparente */
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2); /* Sombra lateral */
+    backdrop-filter: blur(8px); /* Efecto de desenfoque */
+    padding: 20px;
+    overflow-y: auto; /* Permite desplazamiento si hay muchos productos */
+}
+
+/* Botón de cerrar */
+.cart-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-close-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Título del carrito */
+.cart-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Estilos para los productos en el carrito */
+.cart-item {
+    background-color: rgba(13, 9, 247, 0.6);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-item:hover {
+    transform: scale(1.03);
+}
+
+/* Imagen del producto */
+.cart-item img {
+    width: 50px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Nombre del curso */
+.cart-item-title {
+    width: 40%;
+    max-height: 60px;
+    color: white;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+/* Precio */
+.cart-item-price {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Icono de eliminar */
+.cart-item-remove {
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-item-remove:hover {
+    transform: scale(1.2);
+    color: #ff4747;
+}
+
+/* Total y botón de compra */
+.cart-footer {
+    background-color: #0a0678;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cart-total {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cart-btn {
+    background-color: #ffcc00;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.cart-btn:hover {
+    background-color: #ffaa00;
+}

@@ -1,68 +1,99 @@
-<div class="container-fluid text-center" style="width: 30%;">
-    <form class="d-flex flex-column gap-3" [formGroup]="loginForm" (ngSubmit)="login()">
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo</label>
-            <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
-            @if((email?.hasError("required") || email?.hasError("email")) && email?.touched) {
-                <div class="text-danger">
-                    Correo inválido
-                </div>
-            }
+<div
+  class="container-fluid text-center d-flex justify-content-center align-items-center"
+  style="width: 80%; min-height: 8vh"
+>
+  <form
+    class="d-flex flex-column gap-3 p-4 shadow rounded"
+    [formGroup]="loginForm"
+    (ngSubmit)="login()"
+    style="width: 350px; background-color: #f8f9fa"
+  >
+    <h4 class="text-primary">
+      @if(showRegister) { Registrarse } @else { Iniciar Sesión }
+    </h4>
+
+    <div class="mb-3 text-start">
+      <label for="email" class="form-label">Email</label>
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        id="email"
+        aria-describedby="emailHelp"
+      />
+      @if((email?.hasError('required') || email?.hasError('email')) &&
+      email?.touched) {
+      <div class="text-danger">Email inválido</div>
+      }
+    </div>
+
+    <div class="mb-3 text-start">
+      <label for="password" class="form-label">Password</label>
+      <input
+        formControlName="password"
+        type="password"
+        class="form-control"
+        id="password"
+      />
+      @if(password?.hasError('required') && password?.touched) {
+      <div class="text-danger">Password requerida</div>
+      } @if(password?.hasError('minlength') && password?.touched) {
+      <div class="text-danger">
+        La contraseña debe tener al menos 8 dígitos y 1 carácter especial
+      </div>
+      }
+    </div>
+
+    @if(showRegister){
+    <div class="mb-3 text-start">
+      <label for="confirmPassword" class="form-label"
+        >Confirmar contraseña</label
+      >
+      <input
+        formControlName="confirmPassword"
+        type="password"
+        class="form-control"
+        id="confirmPassword"
+      />
+      @if(confirmPassword?.hasError('confirmPassword') &&
+      confirmPassword?.touched) {
+      <div class="text-danger">Las contraseñas no coinciden</div>
+      }
+    </div>
+    }
+
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-primary">
+        @if(showRegister) { Registrarse } @else { Iniciar Sesión }
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="registerWithGoogle()"
+      >
+        <div class="d-flex justify-content-center align-items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+            width="20"
+            height="20"
+            class="me-2"
+          />
+          Iniciar sesión con Google
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Contraseña</label>
-            <input formControlName="password" type="password" class="form-control" id="password">
-            @if(password?.hasError("required") && password?.touched) {
-                <div class="text-danger">
-                    Contraseña requerida
-                </div>                
-            }
-            @if(password?.hasError("minlength") && password?.touched) {
-                <div class="text-danger">
-                    La contraseña debe tener al menos 6 caracteres
-                </div>
-            }
-        </div>
-        @if(showRegister){
-            <div class="mb-3">
-                <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
-                <input formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword">            
-                @if(confirmPassword?.hasError("confirmPassword") && confirmPassword?.touched) {
-                    <div class="text-danger">
-                        Las contraseñas no coinciden
-                    </div>
-                }
-            </div>            
-        }
-        <div class="vstack gap-2 mx-auto" style="width: 70%;">
-            <button type="submit" class="btn btn-primary">
-                @if(showRegister){
-                    Registrarse
-                } @else {
-                    Iniciar sesión
-                }
-            </button>
-            <button type="button" class="btn btn-success" (click)="registerWithGoogle()">
-                <div class="d-flex justify-content-center align-items-center">
-                    Iniciar sesión con Google
-                    <ng-icon icon="bootstrapGoogle"></ng-icon>
-                </div>
-            </button>
-        </div>
-        <span>
-            @if(showRegister){
-                ¿Ya tienes una cuenta? 
-                <a class="link-primary" (click)="toggleRegister()">Inicia sesión</a>
-            } @else {
-                No tienes una cuenta? 
-                <a class="link-primary" (click)="toggleRegister()">Regístrate</a>
-            }
-        </span>
-        @if(errorMessage){
-            <div>
-                <span class="text-danger">{{errorMessage}}</span>
-            </div>
-        }
-    </form>
-    <ng-icon icon="bootstrapGoogle"></ng-icon>
+      </button>
+    </div>
+
+    <span class="mt-2">
+      @if(showRegister) { ¿Ya tienes una cuenta?
+      <a class="link-primary" (click)="toggleRegister()">Inicia sesión</a> }
+      @else { ¿No tienes una cuenta?
+      <a class="link-primary" (click)="toggleRegister()">Regístrate</a> }
+    </span>
+
+    @if(errorMessage){
+    <div class="text-danger mt-2">
+      <span>{{ errorMessage }}</span>
+    </div>
+    }
+  </form>
 </div>

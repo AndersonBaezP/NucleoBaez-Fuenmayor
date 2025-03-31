@@ -1,21 +1,21 @@
-/* General */
+
 .home-container {
     font-family: 'Poppins', sans-serif;
-    color: #fff;
+    color: #333;
 }
 
-/* Sección Hero */
 .hero-section {
     position: relative;
-    background: url('https://dinahosting.com/blog/upload/2018/06/lenguajes-de-programaci%C3%B3n-1-1.jpg') center/cover no-repeat;
-    height: 100vh;
+    background: url('https://i.blogs.es/fd396a/hook/1366_2000.jpg') no-repeat center center/cover;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: white;
 }
 
-.overlay {
+.hero-section .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,42 +26,46 @@
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-content h1 {
     font-size: 3rem;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .hero-content .highlight {
-    color: #ffcc00;
+    color: #f8c33d;
 }
 
 .hero-content p {
-    font-size: 1.5rem;
-    margin: 15px 0;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 .hero-content .btn {
     font-size: 1.2rem;
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: 12px 24px;
+    border-radius: 8px;
 }
 
-/* Sección de Características */
+
 .features {
-    background: #f8f9fa;
     padding: 60px 0;
-    color: #333;
+    background: #f8f9fa;
 }
 
 .feature-box {
-    background: #fff;
-    padding: 30px;
+    padding: 20px;
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
 }
 
 .feature-box i {
@@ -70,41 +74,32 @@
     margin-bottom: 15px;
 }
 
-.feature-box:hover {
-    transform: translateY(-5px);
+.feature-box h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-/* Sección Sobre Nosotros */
+
 .about {
-    background: linear-gradient(to right, #007bff, #6610f2);
     padding: 60px 0;
+    background: #007bff;
+    color: white;
 }
 
 .about h2 {
     font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .about p {
     font-size: 1.2rem;
-    max-width: 700px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: auto;
 }
 
 .about .btn {
-    border: 2px solid #fff;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: 0.3s;
-}
-
-.about .btn:hover {
-    background: #fff;
-    color: #007bff;
-}
-
-/* Footer */
-.footer {
-    background: #222;
-    padding: 20px 0;
-    font-size: 1rem;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    border-radius: 8px;
 }
